@@ -12,6 +12,7 @@ export class StampRepository {
         size: '1024x1024',
       });
       const imageUrl = imageResponse.data[0]?.url || '';
+
       return imageUrl;
     } catch (error) {
       console.error('Error generating image:', error);
