@@ -1,0 +1,54 @@
+// import OpenAI from 'openai';
+// import { StampRepository } from '../app/repository/stampRepository';
+
+// jest.mock('openai', () => {
+//   return {
+//     OpenAI: jest.fn().mockImplementation(() => {
+//       return {
+//         images: {
+//           generate: jest.fn().mockResolvedValue({
+//             data: [
+//               {
+//                 url: 'mockImageUrl',
+//               },
+//             ],
+//           }),
+//         },
+//       };
+//     }),
+//   };
+// });
+
+// describe('StampRepository', () => {
+//   let stampRepository: StampRepository;
+
+//   beforeEach(() => {
+//     stampRepository = new StampRepository();
+//   });
+
+//   it('should return an image URL when generateImage is called', async () => {
+//     const prompt = 'test prompt';
+//     const imageUrl = await stampRepository.generateImage(prompt);
+
+//     // 正しい画像URLが返されることを確認
+//     expect(imageUrl).toBe('mockImageUrl');
+//     // OpenAI.images.generateが適切な引数で呼び出されたことを確認
+//     expect(OpenAI.prototype.images.generate).toHaveBeenCalledWith({
+//       model: 'dall-e-3',
+//       prompt: prompt,
+//       n: 1,
+//       size: '1024x1024',
+//     });
+//   });
+
+//   it('should throw an error if the OpenAI API call fails', async () => {
+//     // OpenAI.images.generate メソッドを失敗させるようにモックを設定
+//     OpenAI.prototype.images.generate.mockRejectedValue(
+//       new Error('API call failed')
+//     );
+
+//     await expect(stampRepository.generateImage('test prompt')).rejects.toThrow(
+//       'Image generation failed'
+//     );
+//   });
+// });

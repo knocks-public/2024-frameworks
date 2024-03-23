@@ -1,12 +1,19 @@
-import { generateImage } from '../repository/stampRepository';
+// stampService.js
+import { StampRepository } from '../repository/stampRepository';
 
-export async function generateImageUrl(input: string): Promise<string> {
-  const template =
-    'スタイルはキティちゃんのようにシンプルで愛らしいキャラクターのLINEスタンプを生成してください。ポーズはセリフに合わせて適切に変化させてください。セリフ：';
+export class StampService {
+  private template: string;
 
-  const prompt = template + input;
+  constructor(
+    template: string,
+    private stampRepository: StampRepository = new StampRepository()
+  ) {
+    this.template = template;
+  }
 
-  const imageUrl = await generateImage(prompt);
-
-  return imageUrl;
+  async generateImageUrl(input: string): Promise<string> {
+    const prompt = this.template + input;
+    const imageUrl = await this.stampRepository.generateImage(prompt);
+    return imageUrl;
+  }
 }

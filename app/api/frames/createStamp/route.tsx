@@ -1,12 +1,15 @@
 import { Button, createFrames } from 'frames.js/next';
-import { generateImageUrl } from '../../../service/stampService';
+import { StampService } from '../../../service/stampService';
 
 const frames = createFrames({
   basePath: '/api/frames/createStamp',
 });
 
 const handleRequest = frames(async (ctx) => {
-  const image_url = await generateImageUrl(ctx.message?.inputText);
+  const template =
+    'スタイルはキティちゃんのようにシンプルで愛らしいキャラクターのLINEスタンプを生成してください。ポーズはセリフに合わせて適切に変化させてください。セリフ：';
+  const service = new StampService(template);
+  const image_url = await service.generateImageUrl(ctx.message?.inputText);
 
   return {
     image: image_url,
