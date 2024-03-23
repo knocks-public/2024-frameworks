@@ -17,7 +17,7 @@ const handleRequest = frames(async (ctx) => {
       aspectRatio: '1:1',
     },
     buttons: [
-      <Button action="link" target="https://google.com">
+      <Button action="link" target="https://google.com" key="">
         {ctx.message?.inputText}
       </Button>,
     ],
