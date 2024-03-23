@@ -80,7 +80,11 @@ export default async function Home({ searchParams }: NextServerPageProps) {
           </div>
         </FrameImage>
         <FrameInput text="Please enter a prompt" />
-        {!state.generated ? <FrameButton>generate</FrameButton> : null}
+        {!state.generated ? (
+          <FrameButton action="post" target="/api/frames/createStamp">
+            generate
+          </FrameButton>
+        ) : null}
         {state.generated ? <FrameButton>initialize</FrameButton> : null}
         {state.generated ? <FrameButton>Mint</FrameButton> : null}
         {state.generated ? <FrameButton>Share</FrameButton> : null}

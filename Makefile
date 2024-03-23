@@ -14,6 +14,10 @@ clean:
 test:
 	yarn test
 
+.PHONY: test_watch
+test_watch:
+	yarn test:watch
+
 .PHONY: test_coverage
 test_coverage:
 	yarn test:coverage
