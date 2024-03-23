@@ -31,27 +31,40 @@ StampCraft simplifies the process of digital stamp creation and sharing, making 
 
 ## Getting Started
 
-To dive into StampCraft, follow these steps:
+Embark on your StampCraft journey with these steps:
 
 1. **Clone the Repository**:
-
-```
-git clone https://github.com/stampcraft/warpcast.git
+```bash
+git clone https://github.com/knocks-public/2024-frameworks.git
 ```
 
 2. **Install Dependencies**:
-
-```
-npm install
+```bash
+yarn install
 ```
 
 3. **Start the Application**:
-
+```bash
+yarn dev
 ```
-npm start
-```
 
-This will launch the StampCraft application on your local machine for development and testing purposes.
+4. Navigate to [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+
+5. To make edits, modify `app/page.tsx`.
+
+6. For debugging, access [http://localhost:3000/debug](http://localhost:3000/debug).
+
+7. (Optional) For real signer usage (incurring warps), copy `.env.sample` to `.env` and populate the environment variables as guided in the comments.
+
+This setup will get the StampCraft application up and running on your local machine for development and trial purposes.
+
+## Deploy
+
+Deploy your application effortlessly:
+
+```bash
+vercel
+```
 
 ## Contribution
 
