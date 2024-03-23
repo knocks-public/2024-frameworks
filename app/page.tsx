@@ -8,10 +8,10 @@ import {
   getFrameMessage,
   getPreviousFrame,
   useFramesReducer,
-} from "frames.js/next/server";
-import Link from "next/link";
-import { DEFAULT_DEBUGGER_HUB_URL, createDebugUrl } from "./debug";
-import { currentURL } from "./utils";
+} from 'frames.js/next/server';
+import Link from 'next/link';
+import { DEFAULT_DEBUGGER_HUB_URL, createDebugUrl } from './debug';
+import { currentURL } from './utils';
 
 type State = {
   generated: boolean;
@@ -31,7 +31,7 @@ const reducer: FrameReducer<State> = (state, action) => {
 
 // This is a react server component only
 export default async function Home({ searchParams }: NextServerPageProps) {
-  const url = currentURL("/");
+  const url = currentURL('/');
   const previousFrame = getPreviousFrame<State>(searchParams);
 
   const frameMessage = await getFrameMessage(previousFrame.postBody, {
@@ -39,7 +39,7 @@ export default async function Home({ searchParams }: NextServerPageProps) {
   });
 
   if (frameMessage && !frameMessage?.isValid) {
-    throw new Error("Invalid frame payload");
+    throw new Error('Invalid frame payload');
   }
 
   const [state, dispatch] = useFramesReducer<State>(
@@ -51,17 +51,17 @@ export default async function Home({ searchParams }: NextServerPageProps) {
   // Here: do a server side side effect either sync or async (using await), such as minting an NFT if you want.
   // example: load the users credentials & check they have an NFT
 
-  console.log("info: state is:", state);
+  console.log('info: state is:', state);
 
   // then, when done, return next frame
   return (
     <div className="p-4">
       frames.js starter kit. The Template Frame is on this page, it&apos;s in
-      the html meta tags (inspect source).{" "}
+      the html meta tags (inspect source).{' '}
       <Link href={createDebugUrl(url)} className="underline">
         Debug
-      </Link>{" "}
-      or see{" "}
+      </Link>{' '}
+      or see{' '}
       <Link href="/examples" className="underline">
         other examples
       </Link>
@@ -75,7 +75,7 @@ export default async function Home({ searchParams }: NextServerPageProps) {
         <FrameImage aspectRatio="1.91:1">
           <div tw="w-full h-full bg-slate-700 text-white justify-center items-center flex flex-col">
             <div tw="flex flex-row">
-              {state?.generated ? "Generated" : "Not Generated"}
+              {state?.generated ? 'Generated' : 'Not Generated'}
             </div>
           </div>
         </FrameImage>

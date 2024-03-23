@@ -7,10 +7,10 @@ import {
   getFrameMessage,
   getPreviousFrame,
   useFramesReducer,
-} from "frames.js/next/server";
-import Link from "next/link";
-import { currentURL } from "../../utils";
-import { DEFAULT_DEBUGGER_HUB_URL, createDebugUrl } from "../../debug";
+} from 'frames.js/next/server';
+import Link from 'next/link';
+import { currentURL } from '../../utils';
+import { DEFAULT_DEBUGGER_HUB_URL, createDebugUrl } from '../../debug';
 
 type State = {
   pageIndex: number;
@@ -26,7 +26,7 @@ const reducer: FrameReducer<State> = (state, action) => {
 
 // This is a react server component only
 export default async function Home({ searchParams }: NextServerPageProps) {
-  const url = currentURL("/examples/transaction");
+  const url = currentURL('/examples/transaction');
   const previousFrame = getPreviousFrame<State>(searchParams);
 
   const [state] = useFramesReducer<State>(reducer, initialState, previousFrame);
@@ -61,7 +61,7 @@ export default async function Home({ searchParams }: NextServerPageProps) {
   // then, when done, return next frame
   return (
     <div>
-      Rent farcaster storage example{" "}
+      Rent farcaster storage example{' '}
       <Link href={createDebugUrl(url)}>Debug</Link>
       <FrameContainer
         pathname="/examples/transaction"

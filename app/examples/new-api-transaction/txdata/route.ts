@@ -1,16 +1,16 @@
-import { STORAGE_REGISTRY_ADDRESS } from "@farcaster/core";
-import { TransactionTargetResponse } from "frames.js";
-import { getFrameMessage } from "frames.js/next/server";
-import { NextRequest, NextResponse } from "next/server";
+import { STORAGE_REGISTRY_ADDRESS } from '@farcaster/core';
+import { TransactionTargetResponse } from 'frames.js';
+import { getFrameMessage } from 'frames.js/next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import {
   Abi,
   createPublicClient,
   encodeFunctionData,
   getContract,
   http,
-} from "viem";
-import { optimism } from "viem/chains";
-import { storageRegistryABI } from "./contracts/storage-registry";
+} from 'viem';
+import { optimism } from 'viem/chains';
+import { storageRegistryABI } from './contracts/storage-registry';
 
 export async function POST(
   req: NextRequest
@@ -20,7 +20,7 @@ export async function POST(
   const frameMessage = await getFrameMessage(json);
 
   if (!frameMessage) {
-    throw new Error("No frame message");
+    throw new Error('No frame message');
   }
 
   // Get current storage price
@@ -28,7 +28,7 @@ export async function POST(
 
   const calldata = encodeFunctionData({
     abi: storageRegistryABI,
-    functionName: "rent",
+    functionName: 'rent',
     args: [BigInt(frameMessage.requesterFid), units],
   });
 
@@ -46,8 +46,8 @@ export async function POST(
   const unitPrice = await storageRegistry.read.price([units]);
 
   return NextResponse.json({
-    chainId: "eip155:10", // OP Mainnet 10
-    method: "eth_sendTransaction",
+    chainId: 'eip155:10', // OP Mainnet 10
+    method: 'eth_sendTransaction',
     params: {
       abi: storageRegistryABI as Abi,
       to: STORAGE_REGISTRY_ADDRESS,

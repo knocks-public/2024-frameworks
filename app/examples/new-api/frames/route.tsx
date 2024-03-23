@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-key */
-import { Button } from "frames.js/next";
-import { frames } from "./frames";
+import { Button } from 'frames.js/next';
+import { frames } from './frames';
 
 const handleRequest = frames(async (ctx) => {
   return {
     image: (
       <span>
-        Hello there: {ctx.pressedButton ? "✅" : "❌"}
-        {ctx.message?.inputText ? `, Typed: ${ctx.message?.inputText}` : ""}
+        Hello there: {ctx.pressedButton ? '✅' : '❌'}
+        {ctx.message?.inputText ? `, Typed: ${ctx.message?.inputText}` : ''}
       </span>
     ),
     buttons: [
@@ -16,7 +16,7 @@ const handleRequest = frames(async (ctx) => {
         Next frame
       </Button>,
     ],
-    textInput: "Type something!",
+    textInput: 'Type something!',
   };
 });
 

@@ -7,10 +7,10 @@ import {
   getFrameMessage,
   getPreviousFrame,
   useFramesReducer,
-} from "frames.js/next/server";
-import Link from "next/link";
-import { currentURL } from "../../utils";
-import { DEFAULT_DEBUGGER_HUB_URL, createDebugUrl } from "../../debug";
+} from 'frames.js/next/server';
+import Link from 'next/link';
+import { currentURL } from '../../utils';
+import { DEFAULT_DEBUGGER_HUB_URL, createDebugUrl } from '../../debug';
 
 type State = {
   saidGm: boolean;
@@ -29,7 +29,7 @@ export default async function Home({
   params,
   searchParams,
 }: NextServerPageProps) {
-  const url = currentURL("/examples/user-data");
+  const url = currentURL('/examples/user-data');
   const previousFrame = getPreviousFrame<State>(searchParams);
 
   const frameMessage = await getFrameMessage(previousFrame.postBody, {
@@ -37,7 +37,7 @@ export default async function Home({
   });
 
   if (frameMessage && !frameMessage?.isValid) {
-    throw new Error("Invalid frame payload");
+    throw new Error('Invalid frame payload');
   }
 
   const [state, dispatch] = useFramesReducer<State>(
@@ -48,7 +48,7 @@ export default async function Home({
 
   // Here: do a server side side effect either sync or async (using await), such as minting an NFT if you want.
   // example: load the users credentials & check they have an NFT
-  console.log("info: state is:", state);
+  console.log('info: state is:', state);
 
   // then, when done, return next frame
   return (
@@ -64,22 +64,22 @@ export default async function Home({
           {frameMessage ? (
             <div
               style={{
-                display: "flex",
-                flexDirection: "column",
+                display: 'flex',
+                flexDirection: 'column',
               }}
             >
-              GM, {frameMessage.requesterUserData?.displayName}! Your FID is{" "}
+              GM, {frameMessage.requesterUserData?.displayName}! Your FID is{' '}
               {frameMessage.requesterFid}
-              {", "}
+              {', '}
               {frameMessage.requesterFid < 20_000
                 ? "you're OG!"
-                : "welcome to the Farcaster!"}
+                : 'welcome to the Farcaster!'}
             </div>
           ) : (
             <div
               style={{
-                display: "flex",
-                flexDirection: "column",
+                display: 'flex',
+                flexDirection: 'column',
               }}
             >
               Say GM

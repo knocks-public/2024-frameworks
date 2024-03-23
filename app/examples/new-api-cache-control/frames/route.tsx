@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-key */
-import { Button } from "frames.js/next";
-import { createFrames } from "frames.js/next";
+import { Button } from 'frames.js/next';
+import { createFrames } from 'frames.js/next';
 
 const frames = createFrames({
-  basePath: "/examples/new-api-cache-control",
+  basePath: '/examples/new-api-cache-control',
 });
 
 const handleRequest = frames(async (ctx) => {
@@ -14,12 +14,12 @@ const handleRequest = frames(async (ctx) => {
       </div>
     ),
     imageOptions: {
-      aspectRatio: "1:1",
+      aspectRatio: '1:1',
     },
     buttons: [<Button action="post">Refresh</Button>],
     headers: {
       // Max cache age in seconds
-      "Cache-Control": "max-age=5",
+      'Cache-Control': 'max-age=5',
     },
   };
 });

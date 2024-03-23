@@ -1,18 +1,18 @@
-import Link from "next/link";
-import { currentURL, vercelURL } from "../../utils";
-import { createDebugUrl } from "../../debug";
-import type { Metadata } from "next";
-import { fetchMetadata } from "frames.js/next";
+import Link from 'next/link';
+import { currentURL, vercelURL } from '../../utils';
+import { createDebugUrl } from '../../debug';
+import type { Metadata } from 'next';
+import { fetchMetadata } from 'frames.js/next';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "New api example",
-    description: "This is a new api example",
+    title: 'New api example',
+    description: 'This is a new api example',
     other: {
       ...(await fetchMetadata(
         new URL(
-          "/examples/new-api-transaction/frames",
-          vercelURL() || "http://localhost:3000"
+          '/examples/new-api-transaction/frames',
+          vercelURL() || 'http://localhost:3000'
         )
       )),
     },
@@ -20,11 +20,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const url = currentURL("/examples/new-api-transaction");
+  const url = currentURL('/examples/new-api-transaction');
 
   return (
     <div>
-      Rent farcaster storage example{" "}
+      Rent farcaster storage example{' '}
       <Link href={createDebugUrl(url)} className="underline">
         Debug
       </Link>
