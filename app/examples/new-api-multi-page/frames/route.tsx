@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-key */
-import { createFrames, Button } from "frames.js/next";
+import { createFrames, Button } from 'frames.js/next';
 
 const totalPages = 5;
 
 const frames = createFrames({
-  basePath: "/examples/new-api-multi-page/frames",
+  basePath: '/examples/new-api-multi-page/frames',
 });
 
 const handleRequest = frames(async (ctx) => {
@@ -39,7 +39,7 @@ const handleRequest = frames(async (ctx) => {
         →
       </Button>,
     ],
-    textInput: "Type something!",
+    textInput: 'Type something!',
   };
 });
 

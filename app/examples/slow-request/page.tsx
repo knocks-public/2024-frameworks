@@ -1,4 +1,4 @@
-import { kv } from "@vercel/kv";
+import { kv } from '@vercel/kv';
 import {
   FrameButton,
   FrameContainer,
@@ -6,11 +6,11 @@ import {
   NextServerPageProps,
   getFrameMessage,
   getPreviousFrame,
-} from "frames.js/next/server";
-import Link from "next/link";
-import { RandomNumberRequestStateValue } from "./slow-fetch/types";
-import { currentURL } from "../../utils";
-import { DEFAULT_DEBUGGER_HUB_URL, createDebugUrl } from "../../debug";
+} from 'frames.js/next/server';
+import Link from 'next/link';
+import { RandomNumberRequestStateValue } from './slow-fetch/types';
+import { currentURL } from '../../utils';
+import { DEFAULT_DEBUGGER_HUB_URL, createDebugUrl } from '../../debug';
 
 type State = {};
 
@@ -18,7 +18,7 @@ const initialState: State = {} as const;
 
 // This is a react server component only
 export default async function Home({ searchParams }: NextServerPageProps) {
-  const url = currentURL("/examples/slow-request");
+  const url = currentURL('/examples/slow-request');
   const previousFrame = getPreviousFrame<State>(searchParams);
 
   const frameMessage = await getFrameMessage(previousFrame.postBody, {
@@ -26,7 +26,7 @@ export default async function Home({ searchParams }: NextServerPageProps) {
   });
 
   if (frameMessage && !frameMessage?.isValid) {
-    throw new Error("Invalid frame payload");
+    throw new Error('Invalid frame payload');
   }
 
   let frame: React.ReactElement;
@@ -71,7 +71,7 @@ export default async function Home({ searchParams }: NextServerPageProps) {
       previousFrame={previousFrame}
     >
       <FrameImage>{error}</FrameImage>
-      <FrameButton target={"/examples/slow-request/frames?retry=true"}>
+      <FrameButton target={'/examples/slow-request/frames?retry=true'}>
         Retry
       </FrameButton>
     </FrameContainer>
@@ -87,12 +87,12 @@ export default async function Home({ searchParams }: NextServerPageProps) {
 
     if (existingRequest) {
       switch (existingRequest.status) {
-        case "pending":
+        case 'pending':
           frame = checkStatusFrame;
           break;
-        case "success":
+        case 'success':
           // if retry is true, then try to generate again and show checkStatusFrame
-          if (searchParams?.reset === "true") {
+          if (searchParams?.reset === 'true') {
             // reset to initial state
             await kv.del(uniqueId);
 
@@ -111,7 +111,7 @@ export default async function Home({ searchParams }: NextServerPageProps) {
                   </div>
                 </FrameImage>
                 <FrameButton
-                  target={"/examples/slow-request/frames?reset=true"}
+                  target={'/examples/slow-request/frames?reset=true'}
                 >
                   Reset
                 </FrameButton>
@@ -119,9 +119,9 @@ export default async function Home({ searchParams }: NextServerPageProps) {
             );
           }
           break;
-        case "error":
+        case 'error':
           // if retry is true, then try to generate again and show checkStatusFrame
-          if (searchParams?.retry === "true") {
+          if (searchParams?.retry === 'true') {
             // reset to initial state
             await kv.del(uniqueId);
 
@@ -135,7 +135,7 @@ export default async function Home({ searchParams }: NextServerPageProps) {
       await kv.set<RandomNumberRequestStateValue>(
         uniqueId,
         {
-          status: "pending",
+          status: 'pending',
           timestamp: new Date().getTime(),
         },
         // set as pending for one minute
@@ -145,13 +145,13 @@ export default async function Home({ searchParams }: NextServerPageProps) {
       // start request, don't await it! Return a loading page, let this run in the background
       fetch(
         new URL(
-          "/examples/slow-request/slow-fetch",
+          '/examples/slow-request/slow-fetch',
           process.env.NEXT_PUBLIC_HOST
         ).toString(),
         {
-          method: "POST",
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({
             postBody: JSON.parse(searchParams?.postBody as string),
@@ -168,7 +168,7 @@ export default async function Home({ searchParams }: NextServerPageProps) {
   // then, when done, return next frame
   return (
     <div className="p-4">
-      frames.js starter kit with slow requests.{" "}
+      frames.js starter kit with slow requests.{' '}
       <Link href={createDebugUrl(url)} className="underline">
         Debug
       </Link>

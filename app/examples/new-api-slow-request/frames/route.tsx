@@ -1,10 +1,10 @@
-import { kv } from "@vercel/kv";
-import { types } from "frames.js/core";
-import { createFrames, Button } from "frames.js/next";
-import { RandomNumberRequestStateValue } from "../slow-fetch/types";
+import { kv } from '@vercel/kv';
+import { types } from 'frames.js/core';
+import { createFrames, Button } from 'frames.js/next';
+import { RandomNumberRequestStateValue } from '../slow-fetch/types';
 
 const frames = createFrames({
-  basePath: "/examples/new-api-slow-request/frames",
+  basePath: '/examples/new-api-slow-request/frames',
 });
 
 const handleRequest = frames(async (ctx) => {
@@ -45,10 +45,10 @@ const handleRequest = frames(async (ctx) => {
 
   if (existingRequest) {
     switch (existingRequest.status) {
-      case "pending":
+      case 'pending':
         return checkStatusFrame;
-      case "success": {
-        if (ctx.url.searchParams.get("reset") === "true") {
+      case 'success': {
+        if (ctx.url.searchParams.get('reset') === 'true') {
           // reset to initial state
           await kv.del(uniqueId);
         }
@@ -63,15 +63,15 @@ const handleRequest = frames(async (ctx) => {
             <Button
               action="post"
               key="1"
-              target={{ pathname: "/", query: { reset: true } }}
+              target={{ pathname: '/', query: { reset: true } }}
             >
               Reset
             </Button>,
           ],
         } satisfies types.FrameDefinition<any>;
       }
-      case "error": {
-        if (ctx.url.searchParams.get("retry") === "true") {
+      case 'error': {
+        if (ctx.url.searchParams.get('retry') === 'true') {
           // reset to initial state
           await kv.del(uniqueId);
 
@@ -83,7 +83,7 @@ const handleRequest = frames(async (ctx) => {
               <Button
                 action="post"
                 key="1"
-                target={{ pathname: "/", query: { retry: true } }}
+                target={{ pathname: '/', query: { retry: true } }}
               >
                 Retry
               </Button>,
@@ -96,7 +96,7 @@ const handleRequest = frames(async (ctx) => {
     await kv.set<RandomNumberRequestStateValue>(
       uniqueId,
       {
-        status: "pending",
+        status: 'pending',
         timestamp: new Date().getTime(),
       },
       // set as pending for one minute
@@ -106,13 +106,13 @@ const handleRequest = frames(async (ctx) => {
     // start request, don't await it! Return a loading page, let this run in the background
     fetch(
       new URL(
-        "/examples/new-api-slow-request/slow-fetch",
+        '/examples/new-api-slow-request/slow-fetch',
         process.env.NEXT_PUBLIC_HOST
       ).toString(),
       {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(await ctx.request.clone().json()),
       }

@@ -1,4 +1,4 @@
-import { ClientProtocolId } from "frames.js";
+import { ClientProtocolId } from 'frames.js';
 import {
   FrameButton,
   FrameContainer,
@@ -6,26 +6,26 @@ import {
   NextServerPageProps,
   getFrameMessage,
   getPreviousFrame,
-} from "frames.js/next/server";
-import { getXmtpFrameMessage, isXmtpFrameActionPayload } from "frames.js/xmtp";
-import { currentURL } from "../../utils";
-import { DEFAULT_DEBUGGER_HUB_URL, createDebugUrl } from "../../debug";
-import Link from "next/link";
+} from 'frames.js/next/server';
+import { getXmtpFrameMessage, isXmtpFrameActionPayload } from 'frames.js/xmtp';
+import { currentURL } from '../../utils';
+import { DEFAULT_DEBUGGER_HUB_URL, createDebugUrl } from '../../debug';
+import Link from 'next/link';
 
 const acceptedProtocols: ClientProtocolId[] = [
   {
-    id: "xmtp",
-    version: "vNext",
+    id: 'xmtp',
+    version: 'vNext',
   },
   {
-    id: "farcaster",
-    version: "vNext",
+    id: 'farcaster',
+    version: 'vNext',
   },
 ];
 
 // This is a react server component only
 export default async function Home({ searchParams }: NextServerPageProps) {
-  const url = currentURL("/examples/multi-protocol");
+  const url = currentURL('/examples/multi-protocol');
   const previousFrame = getPreviousFrame(searchParams);
 
   let fid: number | undefined;
@@ -53,7 +53,7 @@ export default async function Home({ searchParams }: NextServerPageProps) {
 
   return (
     <div>
-      Multi-protocol example{" "}
+      Multi-protocol example{' '}
       <Link className="underline" href={createDebugUrl(url)}>
         Debug
       </Link>

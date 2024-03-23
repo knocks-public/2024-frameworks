@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-key */
-import { Button } from "frames.js/next";
-import { createFrames } from "frames.js/next";
+import { Button } from 'frames.js/next';
+import { createFrames } from 'frames.js/next';
 
 const frames = createFrames({
-  basePath: "/examples/new-api-transaction",
+  basePath: '/examples/new-api-transaction',
 });
 
 const handleRequest = frames(async (ctx) => {
@@ -15,7 +15,7 @@ const handleRequest = frames(async (ctx) => {
         </div>
       ),
       imageOptions: {
-        aspectRatio: "1:1",
+        aspectRatio: '1:1',
       },
       buttons: [
         <Button
@@ -35,7 +35,7 @@ const handleRequest = frames(async (ctx) => {
       </div>
     ),
     imageOptions: {
-      aspectRatio: "1:1",
+      aspectRatio: '1:1',
     },
     buttons: [
       <Button action="tx" target="/txdata" post_url="/frames">

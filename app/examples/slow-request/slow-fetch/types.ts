@@ -1,15 +1,15 @@
 export type RandomNumberRequestStateValue =
   | {
       error: string;
-      status: "error";
+      status: 'error';
       timestamp: number;
     }
   | {
       data: number;
-      status: "success";
+      status: 'success';
       timestamp: number;
     }
   | {
-      status: "pending";
+      status: 'pending';
       timestamp: number;
     };
