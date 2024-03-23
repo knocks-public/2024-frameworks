@@ -1,18 +1,15 @@
 import { Button, createFrames } from 'frames.js/next';
+import { generateImageUrl } from '../../../service/stampService';
 
 const frames = createFrames({
   basePath: '/api/frames/createStamp',
 });
 
 const handleRequest = frames(async (ctx) => {
-  console.log(ctx);
+  const image_url = await generateImageUrl(ctx.message?.inputText);
 
   return {
-    image: (
-      <div tw="w-full h-full bg-slate-700 text-white justify-center items-center flex flex-col">
-        <div tw="flex flex-row">hogehoge</div>
-      </div>
-    ),
+    image: image_url,
     imageOptions: {
       aspectRatio: '1:1',
     },
