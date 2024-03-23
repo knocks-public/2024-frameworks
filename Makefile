@@ -35,4 +35,4 @@ format_check:
 	yarn format:check
 
 .PHONY: before_commit
-before_commit: test format lint lint_text
+before_commit: build test format lint lint_text
