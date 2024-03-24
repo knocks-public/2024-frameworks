@@ -10,7 +10,13 @@ const handleRequest = frames(async (ctx) => {
     const template =
       'スタイルはキティちゃんのようにシンプルで愛らしいキャラクターのLINEスタンプを生成してください。ポーズはセリフに合わせて適切に変化させてください。セリフ：';
     const service = new StampService(template);
-    const image_url = await service.generateImageUrl(ctx.message?.inputText);
+    let image_url = '';
+    if (process.env.NODE_ENV === 'development') {
+      image_url = await service.generateImageUrl(ctx.message?.inputText);
+    } else {
+      image_url =
+        'https://github.com/knocks-public/2024-frameworks/assets/11481781/16530595-52af-4e27-84bd-02b1ce7ec62a';
+    }
 
     return {
       accepts: [
