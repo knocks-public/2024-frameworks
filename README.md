@@ -9,6 +9,8 @@
 
 ETH Global Link: https://ethglobal.com/showcase/stampcraft-izphw
 
+<img src=https://github.com/knocks-public/2024-frameworks/assets/11481781/e5568051-9c4a-42cf-b010-53bbf11f8c1e width=60%>
+
 ## Introduction
 
 Welcome to **StampCraft**, the groundbreaking application transforming online communication. By leveraging the innovative Forcaster protocol and integrating into the Warpcast platform, StampCraft was created during the 2024-Frameworks hackathon to introduce a novel way to create and share LINE-style digital stamps. Dive into a world where expressing emotions, reactions, or conveying unique messages is not only possible but encouraged through adorable, customizable digital stamps. As of today, StampCraft specializes in automatically creating stamps focused on Sushi, a globally beloved Japanese dish, from a single sentence.
@@ -61,7 +63,10 @@ TBD
 
 ## Screenshots
 
-TBD
+<img src=https://github.com/knocks-public/2024-frameworks/assets/11481781/1d3669e4-0b02-4e99-83e0-562c3ed3a80d width=19%>
+<img src=https://github.com/knocks-public/2024-frameworks/assets/11481781/16530595-52af-4e27-84bd-02b1ce7ec62a width=19%>
+<img src=https://github.com/knocks-public/2024-frameworks/assets/11481781/ae9afd4d-a6df-46c2-9f28-ba9dd00595fa width=19%>
+<img src=https://github.com/knocks-public/2024-frameworks/assets/11481781/61062528-ea9e-4cfc-9011-8939353fdf5f width=19%>
 
 ## Getting Started
 
