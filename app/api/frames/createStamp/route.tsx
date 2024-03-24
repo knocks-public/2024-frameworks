@@ -6,22 +6,40 @@ const frames = createFrames({
 });
 
 const handleRequest = frames(async (ctx) => {
-  const template =
-    'スタイルはキティちゃんのようにシンプルで愛らしいキャラクターのLINEスタンプを生成してください。ポーズはセリフに合わせて適切に変化させてください。セリフ：';
-  const service = new StampService(template);
-  const image_url = await service.generateImageUrl(ctx.message?.inputText);
+  if (ctx.clientProtocol.id === 'farcaster') {
+    const template =
+      'スタイルはキティちゃんのようにシンプルで愛らしいキャラクターのLINEスタンプを生成してください。ポーズはセリフに合わせて適切に変化させてください。セリフ：';
+    const service = new StampService(template);
+    const image_url = await service.generateImageUrl(ctx.message?.inputText);
 
-  return {
-    image: image_url,
-    imageOptions: {
-      aspectRatio: '1:1',
-    },
-    buttons: [
-      <Button action="link" target="https://warpcast.com/" key="">
-        Share Your Stamp
-      </Button>,
-    ],
-  };
+    return {
+      accepts: [
+        {
+          id: 'farcaster',
+          version: 'vNext',
+        },
+      ],
+      image: image_url,
+      imageOptions: {
+        aspectRatio: '1:1',
+      },
+      buttons: [
+        <Button action="link" target="https://warpcast.com/" key="">
+          Share Your Stamp
+        </Button>,
+      ],
+    };
+  } else {
+    return {
+      accepts: [
+        {
+          id: 'farcaster',
+          version: 'vNext',
+        },
+      ],
+      image: '',
+    };
+  }
 });
 
 export const POST = handleRequest;
