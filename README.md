@@ -62,9 +62,10 @@ In summary, StampCraft stands at the intersection of technology and creativity, 
 ## Screenshots
 
 <img src=https://github.com/knocks-public/2024-frameworks/assets/11481781/1d3669e4-0b02-4e99-83e0-562c3ed3a80d width=19%>
-<img src=https://github.com/knocks-public/2024-frameworks/assets/11481781/16530595-52af-4e27-84bd-02b1ce7ec62a width=19%>
 <img src=https://github.com/knocks-public/2024-frameworks/assets/11481781/ae9afd4d-a6df-46c2-9f28-ba9dd00595fa width=19%>
 <img src=https://github.com/knocks-public/2024-frameworks/assets/11481781/61062528-ea9e-4cfc-9011-8939353fdf5f width=19%>
+<img src=https://github.com/knocks-public/2024-frameworks/assets/66736869/ce9ffe0a-b556-48af-8418-bef9813d567e width=19%>
+<img src=https://github.com/knocks-public/2024-frameworks/assets/66736869/891e2d44-4136-4d84-b24a-1529a3e3d3ea width=19%>
 
 ## Getting Started
 
