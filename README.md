@@ -28,8 +28,6 @@ StampCraft simplifies the creation and sharing of digital stamps:
 - **Ease of Use**: Intuitive design tools accessible to everyone.
 - **Farcaster Integration**: Utilize Web3 technology for sharing and using stamps.
 - **Community-Focused**: Connect with a broad spectrum of artists and communicators.
-- **Versatile Use**: Enhance every message, across various platforms.
-- **Blockchain-Enabled**: Mint stamps for definitive ownership and sharing possibilities.
 
 ## Technology Stack
 
@@ -59,7 +57,7 @@ In summary, StampCraft stands at the intersection of technology and creativity, 
 
 ## System Overview
 
-TBD
+<img src=https://github.com/knocks-public/2024-frameworks/assets/11481781/52f9a4b1-ca17-4d9a-8989-a56946e2f937 width=70%>
 
 ## Screenshots
 
