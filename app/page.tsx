@@ -67,8 +67,7 @@ export default async function Home({ searchParams }: NextServerPageProps) {
         state={state}
         previousFrame={previousFrame}
       >
-        {/* <FrameImage src="https://framesjs.org/og.png" /> */}
-        <FrameImage aspectRatio="1.91:1">
+        <FrameImage aspectRatio="1:1">
           <div tw="w-full h-full bg-slate-700 text-white justify-center items-center flex flex-col">
             <div tw="flex flex-row">
               {state?.generated ? 'Generated' : 'Not Generated'}
@@ -76,14 +75,9 @@ export default async function Home({ searchParams }: NextServerPageProps) {
           </div>
         </FrameImage>
         <FrameInput text="Please enter a prompt" />
-        {!state.generated ? (
-          <FrameButton action="post" target="/api/frames/createStamp">
-            generate
-          </FrameButton>
-        ) : null}
-        {state.generated ? <FrameButton>initialize</FrameButton> : null}
-        {state.generated ? <FrameButton>Mint</FrameButton> : null}
-        {state.generated ? <FrameButton>Share</FrameButton> : null}
+        <FrameButton action="post" target="/api/frames/createStamp">
+          generate
+        </FrameButton>
       </FrameContainer>
     </div>
   );
