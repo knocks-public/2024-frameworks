@@ -71,7 +71,9 @@ export default async function Home({ searchParams }: NextServerPageProps) {
         <FrameImage aspectRatio="1.91:1">
           <div tw="w-full h-full bg-slate-700 text-white justify-center items-center flex flex-col">
             <div tw="flex flex-row">
-              {state?.generated ? 'Generated' : 'Not Generated'}
+              {state?.generated
+                ? 'Generated'
+                : 'Preferred stamp themes?\nE.g., Good morning, Good night.'}
             </div>
           </div>
         </FrameImage>
