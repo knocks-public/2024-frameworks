@@ -61,10 +61,6 @@ export default async function Home({ searchParams }: NextServerPageProps) {
       <Link href={createDebugUrl(url)} className="underline">
         Debug
       </Link>{' '}
-      or see{' '}
-      <Link href="/examples" className="underline">
-        other examples
-      </Link>
       <FrameContainer
         postUrl="/frames"
         pathname="/"
