@@ -1,4 +1,3 @@
-// stampService.js
 import { StampRepository } from '../repository/stampRepository';
 
 export class StampService {
