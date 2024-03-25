@@ -5107,10 +5107,10 @@ fraction.js@^4.3.7:
   resolved "https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.7.tgz"
   integrity sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==
 
-frames.js@^0.9.0, frames.js@^0.9.3:
-  version "0.9.3"
-  resolved "https://registry.npmjs.org/frames.js/-/frames.js-0.9.3.tgz"
-  integrity sha512-E3SOjHJCji7y4jpmuERERnp5LfWFN6pf+38gfD0Y41eEWCUY+qIpD+Rk6lBa8gh/nhB5uXT4oBDf5ug/WgAndw==
+frames.js@^0.9.0, frames.js@^0.9.6:
+  version "0.9.6"
+  resolved "https://registry.yarnpkg.com/frames.js/-/frames.js-0.9.6.tgz#dcf68f88a0237451dba11fbebcfd7df5a004c649"
+  integrity sha512-NtIs9kWdLnXBB3a7IAnYP3Iv4V+x1dHsKEwacVfWVaFd+3jnzBfiIbvo9dnMuYzFOOyaiPWmZYrff0aTygJP7A==
   dependencies:
     "@farcaster/core" "^0.14.7"
     "@vercel/og" "^0.6.2"
