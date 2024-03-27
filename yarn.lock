@@ -568,12 +568,13 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.1.tgz"
   integrity sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==
 
-"@frames.js/debugger@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.npmjs.org/@frames.js/debugger/-/debugger-0.1.9.tgz"
-  integrity sha512-g7019xfCLMNHoTyaI+TY2L0ZxZnZH2DEvZQAlIeMmRHW0zhwXoKrgGa8QmO0MQtcB6XA3smaO4bM/7U0Yij0pA==
+"@frames.js/debugger@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@frames.js/debugger/-/debugger-0.1.11.tgz#c61a48a1fb638aa92022b0c2d8428a0ae4f41ee8"
+  integrity sha512-0/sb3pC1hPRilJmqOvC4HF3wNtVVJBg2ZvgLEmADvwTvSM234BTbEVMhqDOB/yHYzmrpuJxSbkcdRgBxnX4KyA==
   dependencies:
     "@farcaster/core" "^0.14.7"
+    "@frames.js/render" "^0.0.2"
     "@noble/ed25519" "^2.0.0"
     "@radix-ui/react-accordion" "^1.1.2"
     "@radix-ui/react-checkbox" "^1.0.4"
@@ -594,7 +595,7 @@
     clsx "^2.1.0"
     eslint "^8.56.0"
     eslint-config-next "^14.1.0"
-    frames.js "^0.9.0"
+    frames.js "^0.11.0"
     is-port-reachable "^4.0.0"
     lucide-react "^0.344.0"
     next "^14.1.3"
@@ -610,6 +611,14 @@
     viem "^2.7.12"
     wagmi "^2.5.7"
     yargs "^17.7.2"
+
+"@frames.js/render@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@frames.js/render/-/render-0.0.2.tgz#c04954c337f97b255feefde09e281ac963315e10"
+  integrity sha512-QwHbhWwc+EkWRgiSpVMd8CXqyqSU01IZ93uJFuPFbPCigDUubJUUsATsP4CZKco0i7qtkuGkdALEVx1UHeZnfg==
+  dependencies:
+    "@farcaster/core" "^0.14.7"
+    frames.js "^0.11.0"
 
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"
@@ -5107,7 +5116,17 @@ fraction.js@^4.3.7:
   resolved "https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.7.tgz"
   integrity sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==
 
-frames.js@^0.9.0, frames.js@^0.9.3:
+frames.js@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/frames.js/-/frames.js-0.11.0.tgz#8dfff2b065e4ecbec95c02e8fc1f8bf2a3387dcf"
+  integrity sha512-XJVDjyyMW1Se5zhwd/czY0k2bNSPEXB1RqDEdzr1VC3zwVy2eYgXeXLnSnEYeLyVUVnl1l0ApMBZ/Rkf3hkoXA==
+  dependencies:
+    "@vercel/og" "^0.6.2"
+    cheerio "^1.0.0-rc.12"
+    protobufjs "^7.2.6"
+    viem "^2.7.8"
+
+frames.js@^0.9.3:
   version "0.9.3"
   resolved "https://registry.npmjs.org/frames.js/-/frames.js-0.9.3.tgz"
   integrity sha512-E3SOjHJCji7y4jpmuERERnp5LfWFN6pf+38gfD0Y41eEWCUY+qIpD+Rk6lBa8gh/nhB5uXT4oBDf5ug/WgAndw==
