@@ -568,12 +568,13 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.1.tgz"
   integrity sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==
 
-"@frames.js/debugger@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.npmjs.org/@frames.js/debugger/-/debugger-0.1.9.tgz"
-  integrity sha512-g7019xfCLMNHoTyaI+TY2L0ZxZnZH2DEvZQAlIeMmRHW0zhwXoKrgGa8QmO0MQtcB6XA3smaO4bM/7U0Yij0pA==
+"@frames.js/debugger@^0.1.13":
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/@frames.js/debugger/-/debugger-0.1.13.tgz#5ee418d7fbe32427feffcd8f1dee45dd79cc44ed"
+  integrity sha512-FoRIsg+kq5BcpSTQoG6T1YLJjwwLc4X+5xbl3o3WklEsMbFSL0Nf+LAYto6D9mysCdgJP4EmVapS+ymcRCNhMw==
   dependencies:
     "@farcaster/core" "^0.14.7"
+    "@frames.js/render" "^0.0.3"
     "@noble/ed25519" "^2.0.0"
     "@radix-ui/react-accordion" "^1.1.2"
     "@radix-ui/react-checkbox" "^1.0.4"
@@ -583,6 +584,7 @@
     "@radix-ui/react-switch" "^1.0.3"
     "@radix-ui/react-tabs" "^1.0.4"
     "@rainbow-me/rainbowkit" "^2.0.2"
+    "@reservoir0x/reservoir-sdk" "^2.0.11"
     "@tanstack/react-query" "^5.22.2"
     "@types/node" "^18.17.0"
     "@types/react" "^18.2.0"
@@ -594,7 +596,7 @@
     clsx "^2.1.0"
     eslint "^8.56.0"
     eslint-config-next "^14.1.0"
-    frames.js "^0.9.0"
+    frames.js "^0.11.2"
     is-port-reachable "^4.0.0"
     lucide-react "^0.344.0"
     next "^14.1.3"
@@ -610,6 +612,14 @@
     viem "^2.7.12"
     wagmi "^2.5.7"
     yargs "^17.7.2"
+
+"@frames.js/render@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@frames.js/render/-/render-0.0.3.tgz#87c6dd1ca7bef3aa6eebf8218850424a7f37af82"
+  integrity sha512-87ooug0L4yfu0Egee9tspMA0b08NeqXrQuPY9iMywANmM/kjSEX+/kDrXtRY/GnOwbegm8C0IV3YL8kCEKjtSQ==
+  dependencies:
+    "@farcaster/core" "^0.14.7"
+    frames.js "^0.11.2"
 
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"
@@ -1849,6 +1859,13 @@
   integrity sha512-Qd2kQ3yi6Y3+AcUlrHxSLlnBvpdCEMVGFlVBneVOjaFaPU61g1huc38g339ysXspwY1QZA2aNhrk/KlHGO+ewA==
   dependencies:
     merge-options "^3.0.4"
+
+"@reservoir0x/reservoir-sdk@^2.0.11":
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/@reservoir0x/reservoir-sdk/-/reservoir-sdk-2.0.11.tgz#400310406d7137119364f124630b61f1973ff57f"
+  integrity sha512-ha9UrNKyFNB0OSZ82NROA74gKYPo50syOcqI3DeBbSkTR0auioKykmf3kn9WWcrgbZ2km5EONtJ6uwhXFzxfiw==
+  dependencies:
+    axios "^1.6.7"
 
 "@resvg/resvg-wasm@2.4.0":
   version "2.4.0"
@@ -3330,6 +3347,15 @@ axe-core@=4.7.0:
   version "4.7.0"
   resolved "https://registry.npmjs.org/axe-core/-/axe-core-4.7.0.tgz"
   integrity sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==
+
+axios@^1.6.7:
+  version "1.6.8"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.6.8.tgz#66d294951f5d988a00e87a0ffb955316a619ea66"
+  integrity sha512-v/ZHtJDU39mDpyBoFVkETcd/uNdxrWRrg3bKpOKzXFA6Bvqopts6ALSMU3y6ijYxbw2B+wPrIv46egTzJXCLGQ==
+  dependencies:
+    follow-redirects "^1.15.6"
+    form-data "^4.0.0"
+    proxy-from-env "^1.1.0"
 
 axobject-query@^3.2.1:
   version "3.2.1"
@@ -5060,6 +5086,11 @@ flatted@^3.2.9:
   resolved "https://registry.npmjs.org/flatted/-/flatted-3.3.1.tgz"
   integrity sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==
 
+follow-redirects@^1.15.6:
+  version "1.15.6"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.6.tgz#7f815c0cda4249c74ff09e95ef97c23b5fd0399b"
+  integrity sha512-wWN62YITEaOpSK584EZXJafH1AGpO8RVgElfkuXbTOrPX4fIfOyEpW/CsiNd8JdYrAoOvafRTOEnvsO++qCqFA==
+
 for-each@^0.3.3:
   version "0.3.3"
   resolved "https://registry.npmjs.org/for-each/-/for-each-0.3.3.tgz"
@@ -5107,7 +5138,17 @@ fraction.js@^4.3.7:
   resolved "https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.7.tgz"
   integrity sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==
 
-frames.js@^0.9.0, frames.js@^0.9.3:
+frames.js@^0.11.2:
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/frames.js/-/frames.js-0.11.2.tgz#76b76a032e4dc7523faa1aa211d39db3be91c0f9"
+  integrity sha512-o3XIkvduZgxI4+09BmPd7NOsIPRsfNN5M+hBMqVgEIBPuKdYCx6yZVj86yhShERZf6m7mdA56Wu2rPDNpTgiYA==
+  dependencies:
+    "@vercel/og" "^0.6.2"
+    cheerio "^1.0.0-rc.12"
+    protobufjs "^7.2.6"
+    viem "^2.7.8"
+
+frames.js@^0.9.3:
   version "0.9.3"
   resolved "https://registry.npmjs.org/frames.js/-/frames.js-0.9.3.tgz"
   integrity sha512-E3SOjHJCji7y4jpmuERERnp5LfWFN6pf+38gfD0Y41eEWCUY+qIpD+Rk6lBa8gh/nhB5uXT4oBDf5ug/WgAndw==
@@ -7946,6 +7987,11 @@ proxy-compare@2.5.1:
   version "2.5.1"
   resolved "https://registry.npmjs.org/proxy-compare/-/proxy-compare-2.5.1.tgz"
   integrity sha512-oyfc0Tx87Cpwva5ZXezSp5V9vht1c7dZBhvuV/y3ctkgMVUmiAGDVeeB0dKhGSyT0v1ZTEQYpe/RXlBVBNuCLA==
+
+proxy-from-env@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/proxy-from-env/-/proxy-from-env-1.1.0.tgz#e102f16ca355424865755d2c9e8ea4f24d58c3e2"
+  integrity sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
 
 pump@^3.0.0:
   version "3.0.0"
